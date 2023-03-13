@@ -4,7 +4,7 @@ const connection = require('./dbConnection')
 const taskSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true 
   },
   about: {
     type: String,
