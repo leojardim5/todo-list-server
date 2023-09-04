@@ -54,7 +54,7 @@ const taskFunction = {
         }
     },
     deleteTask:async(req,res)=>{
-        const {_id} = req.params
+        const {_id} = req.params 
         try{
             const task = await Task.findByIdAndDelete({_id})
             if(!task){ 
@@ -64,6 +64,14 @@ const taskFunction = {
         }catch(err){
             return res.status(500).json({error:"server error",err})
         } 
+    },
+    deleteAllTask:async(req,res)=>{
+        try {
+            await Task.deleteMany({})
+        }catch(err){
+            return res.status(500).send({error:"Server error",err})
+        }
+        return res.status(200).send({sucess:"All tasks deleted"})
     }
 }
 

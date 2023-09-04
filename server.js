@@ -11,6 +11,6 @@ server.use(express.json())
 server.use(bp.urlencoded({extended:true}))
 server.use(routes)
 
-server.listen(3000, ()=>{
-    console.log("Server running on 3000")
+server.listen(3001, ()=>{
+    console.log("Server running on 3001")
 })
